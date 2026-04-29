@@ -11,16 +11,30 @@
         body {
             margin: 0;
             padding: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            background-color: #AF42ED;
+        }
+
+        .content-section{
+            margin-left: 260px;
+            padding: 0;
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             background-color: #AF42ED;
-            font-family: 'Poppins', sans-serif;
+            height: auto;
+
+        }
+        #Login-content{
+            margin-left: 0;
+            height: 100vh;
         }
 
+
         .bg-icons i {
+            margin-left: 260px;
             position: absolute;
             color: rgba(255, 255, 255, 0.4);
             z-index: 1;
@@ -194,6 +208,66 @@
             text-decoration: none;
             color: white;
         }
+        #sidebar {
+            /*position: fixed;*/
+            left: 0;
+            top: 0;
+            width: 220px;
+            height: 100%;
+            background-color: #7A00CC;
+            color: white;
+            padding: 20px 20px 5px 20px;
+            /*display: flex;*/
+            flex-direction: column;
+
+            display: none;
+            position: fixed;
+
+        }
+        #shop-name {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 1.5px solid rgba(255,255,255,0.1);
+
+        }
+        #shop-name > h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        #sidebar > ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+        }
+        #sidebar > ul > li {
+            margin: 5px 0;
+
+        }
+        #sidebar ul li a {
+            display: block;
+            padding: 10px 18px;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            border-radius: 10px;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+        #sidebar ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        #sidebar ul li a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-weight: 600;
+        }
+        #admin{
+            margin-top: auto;
+            padding: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 30px;
+        }
 
 
         /*///////////////////////////////Keyframes//////////////////////////////////////*/
@@ -216,14 +290,18 @@
         }
 
 
+
+
     </style>
 </head>
 
 <body>
 
+<main>
 
 
-<section id="Dashboard">
+<!--///////////////////////////Login///////////////////////////////////////-->
+<section id="Login-content" class="content-section">
     <div class="bg-icons">
         <i class="fa-solid fa-shirt" style="top:40%; left:10%; font-size: 30px;"></i>
         <i class="fa-solid fa-bag-shopping" style="top:20%; right:15%; font-size: 30px;"></i>
@@ -267,7 +345,53 @@
             </div>
         </div>
     </div>
+
 </section>
+
+<!--///////////////////////////aside////////////////////////////////////-->
+
+    <aside id="sidebar">
+        <div id="shop-name">
+            <h1>Bela Fashion</h1>
+            <p>Fashion</p>
+        </div>
+
+        <ul>
+            <li><a href="#Dashboard-content" class="active">Dashboard</a></li>
+            <li><a href="#Customer-content">Customer</a></li>
+            <li><a href="#Item-content">Item</a></li>
+            <li><a href="#Order-content">Place Order</a></li>
+            <li><a href="#Order-Details-content">Order History</a></li>
+        </ul>
+
+        <div id="admin">
+            <span>Admin (Manager)</span>
+        </div>
+    </aside>
+
+
+<!--///////////////////////////Dashboard///////////////////////////////////////-->
+
+<section id="Dashboard-content" class="content-section"></section>
+
+<!--///////////////////////////Customer///////////////////////////////////////-->
+
+<section id="Customer-content" class="content-section">
+    <div></div>
+</section>
+
+<!--///////////////////////////Item///////////////////////////////////////-->
+
+<section id="Item-content" class="content-section"></section>
+
+<!--///////////////////////////Order///////////////////////////////////////-->
+
+<section id="Order-content" class="content-section"></section>
+
+<!--///////////////////////////Order-Details///////////////////////////////////////-->
+
+<section id="Order-Details-content" class="content-section"></section>
+
 
 
 
@@ -289,7 +413,8 @@
             }, 600);
         }
     }
-</script>
 
+</script>
+</main>
 </body>
 </html>
