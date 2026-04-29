@@ -27,6 +27,172 @@
             animation: rotateIcon 10s linear infinite;
         }
 
+        #login-container {
+            position: relative;
+            width: 250px;
+            height: 120px;
+            background-color: #00061A;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        #login-container::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent, transparent, transparent, #AF42ED);
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        #login-container::after {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            background: white;
+            border-radius: 22px;
+            z-index: 1;
+        }
+
+        #login-container.expanded {
+            width: 700px;
+            height: 450px;
+            cursor: default;
+        }
+
+        #start-label {
+            position: relative;
+            z-index: 5;
+            color: #AF42ED;
+            font-weight: bold;
+            font-size: 24px;
+            margin: auto;
+        }
+
+        #main-content-border {
+            position: relative;
+            z-index: 5;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            opacity: 0;
+            transition: opacity 0.5s;
+
+        }
+
+        #login-img {
+            flex: 1;
+            position: relative;
+            border-top-left-radius: 22px;
+            border-bottom-left-radius: 22px;
+            margin: 3px 3px;
+            overflow: hidden;
+        }
+
+        .slider-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            animation: slideImages 12s infinite;
+        }
+
+        .slider-image:nth-child(1) {
+            background-image: url("MyPosSystem/assets/img/kids4.webp");
+            animation-delay: 0s;
+        }
+        .slider-image:nth-child(2) {
+            background-image: url("MyPosSystem/assets/img/kids3.webp");
+            animation-delay: 3s;
+        }
+        .slider-image:nth-child(3) {
+            background-image: url("MyPosSystem/assets/img/t-shirt w.jpg");
+            animation-delay: 6s;
+        }
+        .slider-image:nth-child(4) {
+            background-image: url("MyPosSystem/assets/img/frock3.webp");
+            animation-delay: 9s;
+        }
+
+        #form-content {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #form-content > h2 {
+            color: #AF42ED;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .fromGroup {
+            position: relative;
+            margin: 15px 0;
+            width: 100%;
+        }
+
+        .fromGroup > input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            border: none;
+            border-bottom: 2px solid #acacac;
+            background-color: transparent;
+            color: #333;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .fromGroup .fromLabel {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            font-size: 16px;
+            color: #acacac;
+            pointer-events: none;
+            transition: 0.3s;
+        }
+
+        .fromGroup > input:focus ~ .fromLabel,
+        .fromGroup > input:not(:placeholder-shown) ~ .fromLabel {
+            top: -15px;
+            font-size: 12px;
+            color: #AF42ED;
+        }
+
+        .fromGroup > input:focus {
+            border-bottom-color: #AF42ED;
+        }
+
+        #login-btn {
+            width: 100%;
+            padding: 12px;
+            background: #AF42ED;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
 
         /*///////////////////////////////Keyframes//////////////////////////////////////*/
         @keyframes rotateIcon {
@@ -36,6 +202,17 @@
                 transform: rotate(360deg);
             }
         }
+        @keyframes rotateBorder {
+            from { transform: rotate(0deg); } to { transform: rotate(360deg); }
+        }
+        @keyframes slideImages {
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            25% { opacity: 1; }
+            35% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
 
     </style>
 </head>
@@ -55,10 +232,10 @@
     <i class="fa-solid fa-vest" style="top:50%; left:30%; font-size: 30px;"></i>
 </div>
 
-<div id="login-container">
+<div id="login-container" onclick="expandBox()">
     <div id="start-label">LOGIN</div>
 
-    <div id="main-content-border">
+    <div id="main-content-border" style="display: none;">
         <div id="login-img">
             <div class="slider-image"></div>
             <div class="slider-image"></div>
@@ -84,6 +261,9 @@
         </div>
     </div>
 </div>
+
+
+
 
 
 </body>
