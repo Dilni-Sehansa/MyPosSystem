@@ -8,10 +8,35 @@
 
     <style>
 
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #AF42ED;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .bg-icons i {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.4);
+            z-index: 1;
+            animation: rotateIcon 10s linear infinite;
+        }
+
     </style>
 </head>
 
 <body>
-
+<div class="bg-icons">
+    <i class="fa-solid fa-shirt" style="top:10%; left:10%; font-size: 30px;"></i>
+    <i class="fa-solid fa-bag-shopping" style="top:20%; right:15%; font-size: 30px;"></i>
+    <i class="fa-solid fa-socks" style="bottom:15%; left:20%; font-size: 30px;"></i>
+    <i class="fa-solid fa-hat-wizard" style="bottom:20%; right:10%; font-size: 30px;"></i>
+    <i class="fa-solid fa-vest" style="top:50%; left:80%; font-size: 30px;"></i>
+</div>
 </body>
 </html>
