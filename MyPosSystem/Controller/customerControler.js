@@ -51,7 +51,9 @@ $('#customer-save-btn').on('click', function (e) {
     let email = $('#customer_email_input').val();
     let address = $('#customer_address_input').val();
 
-    if (id === "") { Swal.fire("Error", "Invalid Id!", "error"); }
+    if (id === "" || name === "" || phone === "" || email === "" || address === "") {
+        Swal.fire("Error", "Please fill all fields!", "error");
+    }
     else if (getCustomerDataById(id)) { Swal.fire("Error", "ID already exists!", "error"); }
     else if (name === "") { Swal.fire("Error", "Name cannot be empty!", "error"); }
     else if (!check_phone(phone)) { Swal.fire("Error", "Invalid Phone Number!", "error"); }
@@ -72,7 +74,10 @@ $('#customer-update-btn').on('click', function (e) {
     let email = $('#customer_email_input').val();
     let address = $('#customer_address_input').val();
 
-    if (getCustomerDataById(id)) {
+    if (id === "" || name === "" || phone === "" || email === "" || address === "") {
+        Swal.fire("Error", "Please fill all fields!", "error");
+    }
+    else if (getCustomerDataById(id)) {
         updateCustomerData(id, name, phone, email, address);
         Swal.fire("Success", "Customer updated!", "success");
         loadCustomerTbl();
