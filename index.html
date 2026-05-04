@@ -530,6 +530,50 @@
             </div>
         </section>
 
+        <!-- Order Details Section -->
+        <section id="order-details-section" class="spa-section">
+            <div style="background: white; padding: 30px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                <h2 style="color: #7A00CC; font-weight: 600; margin-bottom: 25px;">Search Order</h2>
+                <form class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label" style="color: #7A00CC; font-weight: 500;">Order Id</label>
+                        <input type="text" id="search-order-id" class="form-control" style="border-radius: 10px; background-color: #F9EBFF; border: 1px solid #D1C4E9;" placeholder="O001">
+                    </div>
+                    <div class="col-md-4 d-flex align-items-end">
+                        <button type="button" id="search-order-btn" class="btn" style="background-color: #9500E5; color: white; border-radius: 10px; padding: 10px 30px; font-weight: 600; border: none;">Search</button>
+                    </div>
+                </form>
+            </div>
+            <div style="background: white; padding: 30px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <h4 style="color: #7A00CC; font-weight: 600; margin-bottom: 20px;">Order History</h4>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead style="background-color: #F9F0FF;">
+                        <tr style="color: #7A00CC;">
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Order ID</th>
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Customer ID</th>
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Date</th>
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Sub Total</th>
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Discount</th>
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Total</th>
+                        </tr>
+                        </thead>
+                        <tbody id="orderHistoryTbl" style="vertical-align: middle;">
+                        <tr style="border-bottom: 1px solid ; border-top: none; border-right: none; border-left: none">
+                            <th scope="row">1</th>
+                            <td>I001</td>
+                            <td>Shirt</td>
+                            <td>Soft Girl T-Shirt</td>
+                            <td>1</td>
+                            <td>2000</td>
+                            <td>2500</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
     </div>
 
 </main>
