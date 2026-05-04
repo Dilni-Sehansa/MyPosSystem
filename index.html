@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Pink Petals POS System</title>
@@ -196,6 +196,22 @@
             100% { opacity: 0; }
         }
 
+        /* SPA Specific Styles */
+        .spa-section {
+            display: none;
+            margin-left: 260px;
+            padding: 40px;
+            width: calc(100% - 260px);
+        }
+        .nav-item a {
+            cursor: pointer;
+        }
+        .active-nav {
+            background: rgba(255,255,255,0.1);
+            color: white !important;
+            border-radius: 10px;
+        }
+
     </style>
 </head>
 
@@ -263,6 +279,33 @@
                 <li class="nav-item m-1"><a class="nav-link" id="logout-btn" style="color: rgba(255,255,255,0.7); background-color: red;padding: 10px 15px; border-radius: 10px; margin-top: 50px; cursor: pointer;"><i class="fa-solid fa-arrow-right-from-bracket" style="color: rgb(255, 255, 255);"></i> LogOut</a></li>
             </ul>
         </aside>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard-section" class="spa-section" style="display: block;">
+            <h2 style="color: #7A00CC; font-weight: 600; margin-bottom: 25px;">Dashboard</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">
+                        <h3 style="color: #AF42ED;">Total Customers</h3>
+                        <h1 id="dash-customers-count" style="font-weight: bold; color: #333;">0</h1>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">
+                        <h3 style="color: #AF42ED;">Total Items</h3>
+                        <h1 id="dash-items-count" style="font-weight: bold; color: #333;">0</h1>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">
+                        <h3 style="color: #AF42ED;">Total Orders</h3>
+                        <h1 id="dash-orders-count" style="font-weight: bold; color: #333;">0</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
     </div>
 
 </main>
@@ -274,6 +317,7 @@
 
 <!-- Controllers -->
 <script src="MyPosSystem/Controller/loginController.js"></script>
+<script src="MyPosSystem/Controller/SidebarController.js"></script>
 
 
 </body>
