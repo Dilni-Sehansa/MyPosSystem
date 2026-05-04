@@ -1,6 +1,7 @@
 import { getItemData, updateItemData } from '../model/ItemModel.js';
 import { getCustomerData } from '../model/CustomerModel.js';
 import { addOrderData, generateOrderId } from '../model/OrderModel.js';
+import { refreshDashboard } from './DashboardController.js';
 
 let cart = [];
 
@@ -150,6 +151,7 @@ $(document).ready(function () {
         let date = new Date().toISOString().split('T')[0];
 
         addOrderData(orderId, customerId, date, subTotal, discount, finalTotal, [...cart]);
+        refreshDashboard();
 
         cart.forEach(cItem => {
             let item = getItemData().find(i => i.id === cItem.id);

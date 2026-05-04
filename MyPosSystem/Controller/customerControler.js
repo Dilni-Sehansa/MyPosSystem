@@ -51,10 +51,11 @@ $('#customer-save-btn').on('click', function (e) {
     let email = $('#customer_email_input').val();
     let address = $('#customer_address_input').val();
 
-    // Validations
-    if (id === "") { Swal.fire("Error", "Invalid Id!", "error"); }
+    if (!id || !name || !phone || !email || !address) {
+        Swal.fire("Error", "Please fill all fields!", "error");
+        return;
+    }
     else if (getCustomerDataById(id)) { Swal.fire("Error", "ID already exists!", "error"); }
-    else if (name === "") { Swal.fire("Error", "Name cannot be empty!", "error"); }
     else if (!check_phone(phone)) { Swal.fire("Error", "Invalid Phone Number!", "error"); }
     else if (email === "" || !email.includes("@")) { Swal.fire("Error", "Invalid Email!", "error"); }
     else {
@@ -65,6 +66,37 @@ $('#customer-save-btn').on('click', function (e) {
     }
 });
 
+
+// $('#customer-update-btn').on('click', function (e) {
+//     e.preventDefault();
+//
+//     let id = $('#customer_id_input').val();
+//     let name = $('#customer_name_input').val();
+//     let phone = $('#customer_phone_input').val();
+//     let email = $('#customer_email_input').val();
+//     let address = $('#customer_address_input').val();
+//     if (!id || !name || !phone || !email || !address) {
+//         Swal.fire("Error", "Please fill all fields!", "error");
+//         return;
+//     }
+//     if (!check_phone(phone)) {
+//         Swal.fire("Error", "Invalid Phone Number!", "error");
+//         return;
+//     }
+//     if (!email.includes("@")) {
+//         Swal.fire("Error", "Invalid Email!", "error");
+//         return;
+//     }
+//     let existing = getCustomerDataById(id);
+//     if (!existing) {
+//         Swal.fire("Error", "Please select a customer via Edit button first!", "error");
+//         return;
+//     }
+//     updateCustomerData(id, name, phone, email, address);
+//     Swal.fire("Success", "Customer updated!", "success");
+//     loadCustomerTbl();
+//     cleanCustomerForm();
+// });
 $('#customer-update-btn').on('click', function (e) {
     e.preventDefault();
     let id = $('#customer_id_input').val();
@@ -73,7 +105,20 @@ $('#customer-update-btn').on('click', function (e) {
     let email = $('#customer_email_input').val();
     let address = $('#customer_address_input').val();
 
-    if (getCustomerDataById(id)) {
+    if (!id || !name || !phone || !email || !address) {
+        Swal.fire("Error", "Please fill all fields!", "error");
+        return;
+    }
+    if (!check_phone(phone)) {
+        Swal.fire("Error", "Invalid Phone Number!", "error");
+        return;
+    }
+    if (!email.includes("@")) {
+        Swal.fire("Error", "Invalid Email!", "error");
+        return;
+    }
+
+    else if (getCustomerDataById(id)) {
         updateCustomerData(id, name, phone, email, address);
         Swal.fire("Success", "Customer updated!", "success");
         loadCustomerTbl();
@@ -111,6 +156,7 @@ $(document).ready(function() {
     loadCustomerTbl();
     cleanCustomerForm();
 
+    // SPA Navigation Refresh
     $(".nav-btn[data-target='customer-section']").click(function() {
         loadCustomerTbl();
         cleanCustomerForm();

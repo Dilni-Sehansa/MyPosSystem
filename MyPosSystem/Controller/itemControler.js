@@ -1,12 +1,5 @@
-import {
-    addItemData,
-    updateItemData,
-    deleteItemData,
-    getItemData,
-    getItemDataByIndex,
-    getItemDataById,
-    generateItemId
-} from '../model/ItemModel.js';
+import {addItemData, updateItemData,deleteItemData, getItemData, getItemDataByIndex, getItemDataById, generateItemId} from '../model/ItemModel.js';
+
 
 let selected_image = "";
 
@@ -124,6 +117,7 @@ $('#item-save-btn').on('click', function (e) {
 
     loadItemTbl();
     cleanItemForm();
+
 });
 
 $('#item-update-btn').on('click', function (e) {

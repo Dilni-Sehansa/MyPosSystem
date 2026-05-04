@@ -248,6 +248,8 @@
         }
 
 
+
+
     </style>
 </head>
 
@@ -316,108 +318,117 @@
             </ul>
         </aside>
 
-
         <section id="dashboard-section" class="spa-section" style="display: block;">
+            <div class="container-fluid p-4">
 
-            <!-- Stats Cards -->
-            <div class="row g-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="fw-bold" style="color: #7A00CC;">Dashboard</h2>
+                    <span class="badge rounded-pill px-3 py-2" style="background: #F0E6FF; color: #7A00CC; border: 1px solid #D1C4E9;">
+                <i class="fa-regular fa-calendar-days me-2"></i>
+            </span>
+                </div>
 
-                <!-- Customers -->
-                <div class="col-md-3">
-                    <div class="dash-card">
-                        <i class="fa-solid fa-users"></i>
-                        <h5>Customers</h5>
-                        <h2 id="dash-customers-count">0</h2>
+                <div class="row g-4 mb-4">
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm p-3" style="border-radius: 20px; background: linear-gradient(145deg, #ffffff, #f8f4ff);">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h2 class="fw-bold mb-0" id="dash-customers-count" style="color: #7A00CC;"></h2>
+                                    <p class="text-muted small mb-0">Total Customer</p>
+                                    <span class="text-success small fw-bold">↑ 12% this month</span>
+                                </div>
+                                <div class="p-2 rounded-3" style="background: #F0E6FF;">
+                                    <i class="fa-solid fa-users text-purple" style="color: #7A00CC;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm p-3" style="border-radius: 20px;">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h2 class="fw-bold mb-0" id="dash-items-count" style="color: #7A00CC;"></h2>
+                                    <p class="text-muted small mb-0">Item in Stock</p>
+                                    <span class="text-danger small fw-bold">↓ 2 low stock</span>
+                                </div>
+                                <div class="p-2 rounded-3" style="background: #F0E6FF;">
+                                    <i class="fa-solid fa-clipboard-list" style="color: #7A00CC;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm p-3" style="border-radius: 20px;">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h2 class="fw-bold mb-0" id="dash-revenue" style="color: #7A00CC;">Rs. 0</h2>
+                                    <p class="text-muted small mb-0">Today's Revenue</p>
+                                    <span class="text-muted small">...</span>
+                                </div>
+                                <div class="p-2 rounded-3" style="background: #F0E6FF;">
+                                    <i class="fa-solid fa-money-bill-trend-up" style="color: #7A00CC;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm p-3" style="border-radius: 20px;">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h2 class="fw-bold mb-0" id="dash-orders-count" style="color: #7A00CC;"></h2>
+                                    <p class="text-muted small mb-0">Orders Today</p>
+                                    <span class="text-success small fw-bold">↑ 4 since morning</span>
+                                </div>
+                                <div class="p-2 rounded-3" style="background: #F0E6FF;">
+                                    <i class="fa-solid fa-cart-shopping" style="color: #7A00CC;"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Items -->
-                <div class="col-md-3">
-                    <div class="dash-card">
-                        <i class="fa-solid fa-box"></i>
-                        <h5>Items</h5>
-                        <h2 id="dash-items-count">0</h2>
+                <div class="row g-4">
+
+                    <div class="col-md-7">
+                        <div class="card border-0 shadow-sm p-4" style="border-radius: 25px;">
+                            <div class="d-flex justify-content-between mb-4">
+                                <h5 class="fw-bold" style="color: #7A00CC;">Weekly sales</h5>
+                                <span class="badge" style="background: #F0E6FF; color: #7A00CC;">this week</span>
+                            </div>
+
+                            <div class="d-flex align-items-end justify-content-between" style="height: 200px; padding-bottom: 20px;">
+                                <div style="width: 30px; height: 30%; background: #AF42ED; border-radius: 5px;"></div>
+                                <div style="width: 30px; height: 45%; background: #AF42ED; border-radius: 5px;"></div>
+                                <div style="width: 30px; height: 60%; background: #AF42ED; border-radius: 5px;"></div>
+                                <div style="width: 30px; height: 40%; background: #AF42ED; border-radius: 5px;"></div>
+                                <div style="width: 30px; height: 90%; background: #AF42ED; border-radius: 5px;"></div>
+                                <div style="width: 30px; height: 25%; background: #AF42ED; border-radius: 5px;"></div>
+                                <div style="width: 30px; height: 35%; background: #AF42ED; border-radius: 5px;"></div>
+                            </div>
+                            <div class="d-flex justify-content-between text-muted small mt-2">
+                                <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5">
+                        <div class="card border-0 shadow-sm p-4" style="border-radius: 25px;">
+                            <div class="d-flex justify-content-between mb-3">
+                                <h5 class="fw-bold" style="color: #7A00CC;">Recent Orders</h5>
+                                <a href="#" class="text-decoration-none small" style="color: #7A00CC;">View All</a>
+                            </div>
+                            <div class="list-group list-group-flush" id="dash-recent-orders-list">
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Orders -->
-                <div class="col-md-3">
-                    <div class="dash-card">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <h5>Orders</h5>
-                        <h2 id="dash-orders-count">0</h2>
-                    </div>
-                </div>
-
-                <!-- Revenue -->
-                <div class="col-md-3">
-                    <div class="dash-card">
-                        <i class="fa-solid fa-sack-dollar"></i>
-                        <h5>Total Income</h5>
-                        <h2 id="dash-income">Rs. 0</h2>
-                    </div>
-                </div>
-
             </div>
-
         </section>
-
-<!--        &lt;!&ndash; Dashboard Section &ndash;&gt;-->
-<!--        <section id="dashboard-section" class="spa-section" style="display: block;">-->
-<!--            <h2 style="color: #7A00CC; font-weight: 600; margin-bottom: 25px;">Dashboard</h2>-->
-<!--            <div class="row">-->
-<!--                <div class="col-md-4">-->
-<!--                    <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">-->
-<!--                        <h3 style="color: #AF42ED;">Total Customers</h3>-->
-<!--                        <h1 id="dash-customers-count" style="font-weight: bold; color: #333;">0</h1>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-4">-->
-<!--                    <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">-->
-<!--                        <h3 style="color: #AF42ED;">Total Items</h3>-->
-<!--                        <h1 id="dash-items-count" style="font-weight: bold; color: #333;">0</h1>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-4">-->
-<!--                    <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">-->
-<!--                        <h3 style="color: #AF42ED;">Total Orders</h3>-->
-<!--                        <h1 id="dash-orders-count" style="font-weight: bold; color: #333;">0</h1>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-
-<!--            <div style="background: white; padding: 30px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 50px">-->
-<!--                <h4 style="color: #7A00CC; font-weight: 600; margin-bottom: 20px;">Order History</h4>-->
-<!--                <div class="table-responsive">-->
-<!--                    <table class="table table-hover">-->
-<!--                        <thead style="background-color: #F9F0FF;">-->
-<!--                        <tr style="color: #7A00CC;">-->
-<!--                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Order ID</th>-->
-<!--                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Customer ID</th>-->
-<!--                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Date</th>-->
-<!--                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Sub Total</th>-->
-<!--                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Discount</th>-->
-<!--                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Total</th>-->
-<!--                        </tr>-->
-<!--                        </thead>-->
-<!--                        <tbody id="DashboardTbl" style="vertical-align: middle;">-->
-<!--                        <tr style="border-bottom: 1px solid ; border-top: none; border-right: none; border-left: none">-->
-<!--                            <th scope="row"></th>-->
-<!--                            <td></td>-->
-<!--                            <td></td>-->
-<!--                            <td></td>-->
-<!--                            <td></td>-->
-<!--                            <td></td>-->
-<!--                            <td></td>-->
-<!--                        </tr>-->
-<!--                        </tbody>-->
-<!--                    </table>-->
-<!--                </div>-->
-<!--            </div>-->
-
-
-<!--        </section>-->
-
 
         <!-- Customer Section -->
         <section id="customer-section" class="spa-section">
@@ -434,7 +445,7 @@
                     </div>
                     <div class="col-md-4">
                         <label class="form-label" style="color: #7A00CC; font-weight: 500;">Contact</label>
-                        <input type="text" class="form-control" style="border-radius: 10px; background-color: #F9EBFF; border: 1px solid #D1C4E9;" placeholder="07x xxx xxxx" required id="customer_phone_input">
+                        <input type="number" class="form-control" style="border-radius: 10px; background-color: #F9EBFF; border: 1px solid #D1C4E9;" placeholder="07x xxx xxxx" required id="customer_phone_input">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" style="color: #7A00CC; font-weight: 500;">Email</label>
@@ -518,11 +529,11 @@
                     </div>
                     <div class="col-md-4">
                         <label class="form-label" style="color: #7A00CC; font-weight: 500;">Received Price</label>
-                        <input type="text" class="form-control" id="item_receivedPrice_input" style="border-radius: 10px; background-color: #F9EBFF;">
+                        <input type="number" class="form-control" id="item_receivedPrice_input" style="border-radius: 10px; background-color: #F9EBFF;">
                     </div>
                     <div class="col-md-4">
                         <label class="form-label" style="color: #7A00CC; font-weight: 500;">Price</label>
-                        <input type="text" class="form-control" id="item_price_input" style="border-radius: 10px; background-color: #F9EBFF;">
+                        <input type="number" class="form-control" id="item_price_input" style="border-radius: 10px; background-color: #F9EBFF;">
                     </div>
                     <div class="col-md-4">
                         <label class="form-label" style="color: #7A00CC; font-weight: 500;">Item Photo</label>
