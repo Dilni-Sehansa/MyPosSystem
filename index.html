@@ -246,6 +246,25 @@
         </div>
     </section>
 
+    <!--///////////////////////////Main Content///////////////////////////////////////-->
+    <div id="main-app" style="display: none;">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="position-fixed top-0 start-0" style="width: 260px; height: 100vh; background-color: #7A00CC; padding: 20px; color: white; z-index: 1000;">
+            <div style="text-align: center; margin-bottom: 30px;border-bottom: 1px solid white ">
+                <h3 style="font-weight: 600; margin: 0;">Pink Petals</h3>
+                <p style="font-size: 12px; opacity: 0.8;">POS System</p>
+            </div>
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item m-1"><a class="nav-link nav-btn active-nav" data-target="dashboard-section" style="color: rgba(255,255,255,0.7); padding: 10px 15px;">Dashboard</a></li>
+                <li class="nav-item m-1"><a class="nav-link nav-btn" data-target="customer-section" style="color: rgba(255,255,255,0.7); padding: 10px 15px;">Customer</a></li>
+                <li class="nav-item m-1"><a class="nav-link nav-btn" data-target="item-section" style="color: rgba(255,255,255,0.7); padding: 10px 15px;">Item</a></li>
+                <li class="nav-item m-1"><a class="nav-link nav-btn" data-target="order-section" style="color: rgba(255,255,255,0.7); padding: 10px 15px;">Order</a></li>
+                <li class="nav-item m-1"><a class="nav-link nav-btn" data-target="order-details-section" style="color: rgba(255,255,255,0.7); padding: 10px 15px;">Order Details</a></li>
+                <li class="nav-item m-1"><a class="nav-link" id="logout-btn" style="color: rgba(255,255,255,0.7); background-color: red;padding: 10px 15px; border-radius: 10px; margin-top: 50px; cursor: pointer;"><i class="fa-solid fa-arrow-right-from-bracket" style="color: rgb(255, 255, 255);"></i> LogOut</a></li>
+            </ul>
+        </aside>
+    </div>
+
 </main>
 
 <!--//////////////////////////////Js////////////////////////////////////////-->
