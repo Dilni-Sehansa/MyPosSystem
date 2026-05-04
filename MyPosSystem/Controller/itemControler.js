@@ -70,6 +70,22 @@ $('#item-save-btn').on('click', function (e) {
     e.preventDefault();
     let id = $('#item_id_input').val();
     let name = $('#item_name_input').val();
+    let category = $('#item_category_input').val();
+    let size = $('#item_size_input').val();
+    let qty = $('#item_qty_input').val();
+    let receivedPrice = $('#item_receivedPrice_input').val();
+    let price = $('#item_price_input').val();
+
+    if (id === "" || name === "" || category === "" || size === "" || qty === "" || receivedPrice === "" || price === "") {
+        Swal.fire("Error", "Please fill all fields!", "error");
+        return;
+    }
+
+    if (!selected_image) {
+        Swal.fire("Error", "Please select an image!", "error");
+        return;
+    }
+
     if (!id) { Swal.fire("Error", "Invalid Id!", "error"); return; }
     if (getItemDataById(id)) { Swal.fire("Error", "ID already exists!", "error"); return; }
 
@@ -82,12 +98,31 @@ $('#item-save-btn').on('click', function (e) {
 $('#item-update-btn').on('click', function (e) {
     e.preventDefault();
     let id = $('#item_id_input').val();
-    if (getItemDataById(id)) {
-        updateItemData(id, $('#item_name_input').val(), $('#item_category_input').val(), $('#item_size_input').val(), $('#item_qty_input').val(), $('#item_receivedPrice_input').val(), $('#item_price_input').val(), selected_image);
-        Swal.fire("Success", "Item updated!", "success");
-        loadItemTbl();
-        cleanItemForm();
+    let name = $('#item_name_input').val();
+    let category = $('#item_category_input').val();
+    let size = $('#item_size_input').val();
+    let qty = $('#item_qty_input').val();
+    let receivedPrice = $('#item_receivedPrice_input').val();
+    let price = $('#item_price_input').val();
+
+    if (id === "" || name === "" || category === "" || size === "" || qty === "" || receivedPrice === "" || price === "") {
+        Swal.fire("Error", "Please fill all fields before updating!", "error");
+        return;
     }
+
+    let existingItem = getItemDataById(id);
+    if (!existingItem) {
+        Swal.fire("Error", "Item not found!", "error");
+        return;
+    }
+
+    let imageToUse = selected_image || existingItem.image;
+
+    pdateItemData(id, name, category, size, qty, receivedPrice, price, imageToUse);
+
+    Swal.fire("Success", "Item updated!", "success");
+    loadItemTbl();
+    cleanItemForm();
 });
 
 $('#itemTbl').on('click', '.delete-btn', function () {
