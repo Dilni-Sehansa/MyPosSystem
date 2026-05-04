@@ -306,6 +306,72 @@
         </section>
 
 
+        <!-- Customer Section -->
+        <section id="customer-section" class="spa-section">
+            <div style="background: white; padding: 30px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                <h2 style="color: #7A00CC; font-weight: 600; margin-bottom: 25px;">Customer Management</h2>
+                <form class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label" style="color: #7A00CC; font-weight: 500;">Customer Id</label>
+                        <input type="text" class="form-control" style="border-radius: 10px; background-color: #F9EBFF; border: 1px solid #D1C4E9;" placeholder="C001" required id="customer_id_input">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" style="color: #7A00CC; font-weight: 500;">Customer Name</label>
+                        <input type="text" class="form-control" style="border-radius: 10px; background-color: #F9EBFF; border: 1px solid #D1C4E9;" placeholder="Enter Name" required id="customer_name_input">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" style="color: #7A00CC; font-weight: 500;">Contact</label>
+                        <input type="text" class="form-control" style="border-radius: 10px; background-color: #F9EBFF; border: 1px solid #D1C4E9;" placeholder="07x xxx xxxx" required id="customer_phone_input">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" style="color: #7A00CC; font-weight: 500;">Email</label>
+                        <input type="email" class="form-control" style="border-radius: 10px; background-color: #F9EBFF; border: 1px solid #D1C4E9;" placeholder="example@mail.com" required id="customer_email_input">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" style="color: #7A00CC; font-weight: 500;">Address</label>
+                        <input type="text" class="form-control" style="border-radius: 10px; background-color: #F9EBFF; border: 1px solid #D1C4E9;" placeholder="City Name" required id="customer_address_input">
+                    </div>
+                    <div class="col-12" style="margin-top: 30px; text-align: right;">
+                        <button type="button" class="btn" style="background-color: #E1D0ED; color: #7A00CC; border-radius: 10px; padding: 10px 20px; font-weight: 600; margin-right: 10px; border: none;" id="customer-update-btn">Update</button>
+                        <button type="button" class="btn" style="background-color: #E1D0ED; color: #7A00CC; border-radius: 10px; padding: 10px 20px; font-weight: 600; margin-right: 10px; border: none;" id="customer-clear-btn"><i class="fa-solid fa-arrows-rotate" style="color: rgb(103, 0, 154);"></i></button>
+                        <button type="submit" class="btn" style="background-color: #9500E5; color: white; border-radius: 10px; padding: 10px 30px; font-weight: 600; border: none;" id="customer-save-btn">Save Customer</button>
+                    </div>
+                </form>
+            </div>
+            <div style="background: white; padding: 30px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <h4 style="color: #7A00CC; font-weight: 600; margin-bottom: 20px;">Customer Records</h4>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead style="background-color: #F9F0FF;">
+                        <tr style="color: #7A00CC;">
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">#</th>
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">ID</th>
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Name</th>
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Contact</th>
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Email</th>
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Address</th>
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody style="vertical-align: middle;" id="customerTbl">
+                        <tr style="border-bottom: 1px solid ; border-top: none; border-right: none; border-left: none">
+                            <th scope="row"></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <button style="background-color: #FFFBD4; border-top: 0.2px solid yellow; border-left: 0.2px solid yellow; border-bottom: 0.2px solid yellow; border-right: none; border-radius: 5px 0 0 5px" id="customer_edit_btn">Edit</button>
+                                <button style="background-color: #FFCCCC; border-top: 0.2px solid red; border-right: 0.2px solid red; border-bottom: 0.2px solid red; border-left: none; border-radius: 0 5px 5px 0;" id="customer_delete_btn">Delete</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
     </div>
 
 </main>
