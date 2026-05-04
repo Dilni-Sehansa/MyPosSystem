@@ -17,6 +17,12 @@ $(document).ready(function() {
         updateDashboard();
     });
 
+    let orders = getOrderData();
+
+    let income = orders.reduce((sum, o) => sum + (o.total || 0), 0);
+
+    $('#dash-income').text("Rs. " + income.toFixed(2));
+
     updateDashboard();
     window.updateDashboardStats = updateDashboard;
 });

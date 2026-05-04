@@ -40,4 +40,11 @@ const getCustomerDataById = (id) => {
     return customer_db.find(item => item.id === id);
 }
 
-export { addCustomerData, updateCustomerData, deleteCustomerData, getCustomerData, getCustomerDataByIndex, getCustomerDataById };
+const generateCustomerId = () => {
+    if (customer_db.length === 0) return "C001";
+    let lastId = customer_db[customer_db.length - 1].id;
+    let number = parseInt(lastId.substring(1)) + 1;
+    return "C" + number.toString().padStart(3, '0');
+}
+
+export { addCustomerData, updateCustomerData, deleteCustomerData, getCustomerData, getCustomerDataByIndex, getCustomerDataById, generateCustomerId };

@@ -212,6 +212,42 @@
             border-radius: 10px;
         }
 
+
+        .dash-card{
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .dash-card:hover{
+            transform: translateY(-5px);
+        }
+
+        .dash-card i{
+            font-size: 28px;
+            color: #AF42ED;
+            margin-bottom: 10px;
+        }
+
+        .dash-card h5{
+            color: #777;
+            margin: 5px 0;
+        }
+
+        .dash-card h2{
+            color: #333;
+            font-weight: bold;
+        }
+        #dashboard-section{
+            margin-left: 280px;
+            margin-top: 20px;
+            padding-right: 20px;
+        }
+
+
     </style>
 </head>
 
@@ -280,30 +316,107 @@
             </ul>
         </aside>
 
-        <!-- Dashboard Section -->
+
         <section id="dashboard-section" class="spa-section" style="display: block;">
-            <h2 style="color: #7A00CC; font-weight: 600; margin-bottom: 25px;">Dashboard</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">
-                        <h3 style="color: #AF42ED;">Total Customers</h3>
-                        <h1 id="dash-customers-count" style="font-weight: bold; color: #333;">0</h1>
+
+            <!-- Stats Cards -->
+            <div class="row g-4">
+
+                <!-- Customers -->
+                <div class="col-md-3">
+                    <div class="dash-card">
+                        <i class="fa-solid fa-users"></i>
+                        <h5>Customers</h5>
+                        <h2 id="dash-customers-count">0</h2>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">
-                        <h3 style="color: #AF42ED;">Total Items</h3>
-                        <h1 id="dash-items-count" style="font-weight: bold; color: #333;">0</h1>
+
+                <!-- Items -->
+                <div class="col-md-3">
+                    <div class="dash-card">
+                        <i class="fa-solid fa-box"></i>
+                        <h5>Items</h5>
+                        <h2 id="dash-items-count">0</h2>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">
-                        <h3 style="color: #AF42ED;">Total Orders</h3>
-                        <h1 id="dash-orders-count" style="font-weight: bold; color: #333;">0</h1>
+
+                <!-- Orders -->
+                <div class="col-md-3">
+                    <div class="dash-card">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <h5>Orders</h5>
+                        <h2 id="dash-orders-count">0</h2>
                     </div>
                 </div>
+
+                <!-- Revenue -->
+                <div class="col-md-3">
+                    <div class="dash-card">
+                        <i class="fa-solid fa-sack-dollar"></i>
+                        <h5>Total Income</h5>
+                        <h2 id="dash-income">Rs. 0</h2>
+                    </div>
+                </div>
+
             </div>
+
         </section>
+
+<!--        &lt;!&ndash; Dashboard Section &ndash;&gt;-->
+<!--        <section id="dashboard-section" class="spa-section" style="display: block;">-->
+<!--            <h2 style="color: #7A00CC; font-weight: 600; margin-bottom: 25px;">Dashboard</h2>-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-4">-->
+<!--                    <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">-->
+<!--                        <h3 style="color: #AF42ED;">Total Customers</h3>-->
+<!--                        <h1 id="dash-customers-count" style="font-weight: bold; color: #333;">0</h1>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-md-4">-->
+<!--                    <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">-->
+<!--                        <h3 style="color: #AF42ED;">Total Items</h3>-->
+<!--                        <h1 id="dash-items-count" style="font-weight: bold; color: #333;">0</h1>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-md-4">-->
+<!--                    <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">-->
+<!--                        <h3 style="color: #AF42ED;">Total Orders</h3>-->
+<!--                        <h1 id="dash-orders-count" style="font-weight: bold; color: #333;">0</h1>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div style="background: white; padding: 30px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 50px">-->
+<!--                <h4 style="color: #7A00CC; font-weight: 600; margin-bottom: 20px;">Order History</h4>-->
+<!--                <div class="table-responsive">-->
+<!--                    <table class="table table-hover">-->
+<!--                        <thead style="background-color: #F9F0FF;">-->
+<!--                        <tr style="color: #7A00CC;">-->
+<!--                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Order ID</th>-->
+<!--                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Customer ID</th>-->
+<!--                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Date</th>-->
+<!--                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Sub Total</th>-->
+<!--                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Discount</th>-->
+<!--                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Total</th>-->
+<!--                        </tr>-->
+<!--                        </thead>-->
+<!--                        <tbody id="DashboardTbl" style="vertical-align: middle;">-->
+<!--                        <tr style="border-bottom: 1px solid ; border-top: none; border-right: none; border-left: none">-->
+<!--                            <th scope="row"></th>-->
+<!--                            <td></td>-->
+<!--                            <td></td>-->
+<!--                            <td></td>-->
+<!--                            <td></td>-->
+<!--                            <td></td>-->
+<!--                            <td></td>-->
+<!--                        </tr>-->
+<!--                        </tbody>-->
+<!--                    </table>-->
+<!--                </div>-->
+<!--            </div>-->
+
+
+<!--        </section>-->
 
 
         <!-- Customer Section -->
