@@ -451,6 +451,85 @@
             </div>
         </section>
 
+        <!-- Order Section -->
+        <section id="order-section" class="spa-section">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div style="background: white; padding: 30px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                        <h2 style="color: #7A00CC; font-weight: 600; margin-bottom: 25px;">Place Order</h2>
+                        <form class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label" style="color: #7A00CC; font-weight: 500;">Customer</label>
+                                <select id="cust-id-select" class="form-control" style="border-radius: 10px; background-color: #F9EBFF; border: 1px solid #D1C4E9;"></select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" style="color: #7A00CC; font-weight: 500;">Order Id</label>
+                                <input type="text" id="order-id-input" class="form-control" style="border-radius: 10px; background-color: #F9EBFF; border: 1px solid #D1C4E9;" placeholder="O001" required>
+                            </div>
+                        </form>
+                        <h2 style="color: #7A00CC; font-weight: 600; margin-bottom: 25px;">Add Item to Cart</h2>
+                        <form id="addToCartForm" class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label" style="color: #7A00CC; font-weight: 500;">Item Id</label>
+                                <select id="item-id-select" class="form-control" style="border-radius: 10px; background-color: #F9EBFF; border: 1px solid #D1C4E9;"></select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" style="color: #7A00CC; font-weight: 500;">Qty</label>
+                                <input id="qty-input" type="number" class="form-control" style="border-radius: 10px; background-color: #F9EBFF; border: 1px solid #D1C4E9;" placeholder="0" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" style="color: #7A00CC; font-weight: 500;">Unit Price</label>
+                                <input id="unit-price-input" type="text" class="form-control" style="border-radius: 10px; background-color: #F9EBFF; border: 1px solid #D1C4E9;" placeholder="Rs. 0.00" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" style="color: #7A00CC; font-weight: 500;">Size</label>
+                                <select id="size-select" class="form-control" style="border-radius: 10px; background-color: #F9EBFF; border: 1px solid #D1C4E9;" required></select>
+                            </div>
+                            <div class="col-12" style="margin-top: 30px; text-align: right;">
+                                <button type="submit" class="btn" style="background-color: #9500E5; color: white; border-radius: 10px; padding: 10px 30px; font-weight: 600; border: none;">Add to Cart</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div style="background: white; padding: 30px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h2 style="color: #7A00CC; font-weight: 600;">Cart</h2>
+                            <button id="clear-cart-btn" class="btn btn-sm" style="background-color: #F9EBFF; color: #7A00CC; border: 1px solid #D1C4E9; border-radius: 8px; padding: 5px 15px;">Clear</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead style="background-color: #F9F0FF;">
+                                <tr style="color: #7A00CC;">
+                                    <th>#</th><th>Item</th><th>Price</th><th>Qty</th><th>Total</th><th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody id="cartTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div style="background: #7A00CC; padding: 30px; border-radius: 30px; color: white; box-shadow: 0 10px 25px rgba(122, 0, 204, 0.3);">
+                        <h3 style="font-weight: 600; margin-bottom: 30px;">Order Summary</h3>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span style="opacity: 0.8;">Sub Total</span>
+                            <span id="sub-total-text" style="font-weight: 600;">Rs. 0.00</span>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label" style="opacity: 0.8;">Discount (%)</label>
+                            <input type="number" id="discount-input" class="form-control" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 10px;" value="0">
+                        </div>
+                        <div style="border-top: 1px dashed rgba(255,255,255,0.3); padding-top: 20px; margin-top: 20px;">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h4 style="font-weight: 600;">Total</h4>
+                                <h2 id="final-total-text" style="font-weight: 600; margin: 0;">Rs. 0.00</h2>
+                            </div>
+                        </div>
+                        <button id="purchase-btn" class="btn w-100 mt-4" style="background-color: #00ca72; color: white; border-radius: 15px; padding: 15px; font-weight: 600; font-size: 18px; border: none;">Complete Purchase</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
 
 </main>
