@@ -13,7 +13,7 @@
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
             background-color: #E0D9E3;
-            /* overflow-y: hidden; */
+
         }
         #Login-content{
             margin-left: 0;
@@ -211,32 +211,15 @@
             color: white !important;
             border-radius: 10px;
         }
-
-
-        .dash-card{
-            background: white;
-            padding: 25px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
-
-        .dash-card:hover{
-            transform: translateY(-5px);
-        }
-
         .dash-card i{
             font-size: 28px;
             color: #AF42ED;
             margin-bottom: 10px;
         }
-
         .dash-card h5{
             color: #777;
             margin: 5px 0;
         }
-
         .dash-card h2{
             color: #333;
             font-weight: bold;
@@ -246,6 +229,15 @@
             margin-top: 20px;
             padding-right: 20px;
         }
+
+        @media all and (max-width: 1000px) {
+
+            .row {
+                gap: 10px;
+            }
+        }
+
+
 
 
 
@@ -315,6 +307,7 @@
                 <li class="nav-item m-1"><a class="nav-link nav-btn" data-target="order-section" style="color: rgba(255,255,255,0.7); padding: 10px 15px;">Order</a></li>
                 <li class="nav-item m-1"><a class="nav-link nav-btn" data-target="order-details-section" style="color: rgba(255,255,255,0.7); padding: 10px 15px;">Order Details</a></li>
                 <li class="nav-item m-1"><a class="nav-link" id="logout-btn" style="color: rgba(255,255,255,0.7); background-color: red;padding: 10px 15px; border-radius: 10px; margin-top: 50px; cursor: pointer;"><i class="fa-solid fa-arrow-right-from-bracket" style="color: rgb(255, 255, 255);"></i> LogOut</a></li>
+
             </ul>
         </aside>
 
