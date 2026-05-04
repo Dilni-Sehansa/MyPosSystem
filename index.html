@@ -372,6 +372,85 @@
             </div>
         </section>
 
+        <!-- Item Section -->
+        <section id="item-section" class="spa-section">
+            <div style="background: white; padding: 30px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                <h2 style="color: #7A00CC; font-weight: 600; margin-bottom: 25px;">Item Management</h2>
+                <form class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label" style="color: #7A00CC; font-weight: 500;">Item Id</label>
+                        <input type="text" class="form-control" id="item_id_input" style="border-radius: 10px; background-color: #F9EBFF;" placeholder="I001">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" style="color: #7A00CC; font-weight: 500;">Item Name</label>
+                        <input type="text" class="form-control" id="item_name_input" style="border-radius: 10px; background-color: #F9EBFF;" placeholder="Soft Girl T-Shirt">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" style="color: #7A00CC; font-weight: 500;">Category</label>
+                        <select class="form-control" id="item_category_input" style="border-radius: 10px; background-color: #F9EBFF;">
+                            <option>Shirt</option>
+                            <option>T-Shirt</option>
+                            <option>Dress</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" style="color: #7A00CC; font-weight: 500;">Size</label>
+                        <select class="form-control" id="item_size_input" style="border-radius: 10px; background-color: #F9EBFF;">
+                            <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" style="color: #7A00CC; font-weight: 500;">Qty</label>
+                        <input type="number" class="form-control" id="item_qty_input" style="border-radius: 10px; background-color: #F9EBFF;">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" style="color: #7A00CC; font-weight: 500;">Received Price</label>
+                        <input type="text" class="form-control" id="item_receivedPrice_input" style="border-radius: 10px; background-color: #F9EBFF;">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" style="color: #7A00CC; font-weight: 500;">Price</label>
+                        <input type="text" class="form-control" id="item_price_input" style="border-radius: 10px; background-color: #F9EBFF;">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" style="color: #7A00CC; font-weight: 500;">Item Photo</label>
+                        <input type="file" class="form-control" id="item_file_input" accept="image/*" style="border-radius: 10px; background-color: #F9EBFF;">
+                    </div>
+                    <div class="col-md-4 d-flex align-items-end">
+                        <div id="image-preview-container" style="width: 60px; height: 60px; border-radius: 10px; border: 2px dashed #D1C4E9; display: flex; align-items: center; justify-content: center; background-color: #F9EBFF; overflow: hidden;">
+                            <i class="fa-solid fa-image" style="color: #D1C4E9; font-size: 20px;" id="placeholder_icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-12" style="margin-top: 30px; text-align: right;">
+                        <button type="button" class="btn" style="background-color: #E1D0ED; color: #7A00CC; border-radius: 10px; padding: 10px 20px; font-weight: 600; border: none;" id="item-update-btn">Update</button>
+                        <button type="button" class="btn" style="background-color: #E1D0ED; color: #7A00CC; border-radius: 10px; padding: 10px 20px; font-weight: 600; border: none;" id="item-clear-btn"><i class="fa-solid fa-arrows-rotate"></i></button>
+                        <button type="button" class="btn" style="background-color: #9500E5; color: white; border-radius: 10px; padding: 10px 30px; font-weight: 600; border: none;" id="item-save-btn">Save Item</button>
+                    </div>
+                </form>
+            </div>
+            <div style="background: white; padding: 30px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <h4 style="color: #7A00CC; font-weight: 600; margin-bottom: 20px;">Item Records</h4>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead style="background-color: #F9F0FF;">
+                        <tr style="color: #7A00CC;">
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">#</th>
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Photo</th>
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">ID</th>
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Category</th>
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Size</th>
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Qty</th>
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Received Price</th>
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Price</th>
+                            <th scope="col" style="border-bottom: 2px solid #D1C4E9; background-color: #F0D6FF">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody style="vertical-align: middle;" id="itemTbl">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
     </div>
 
 </main>
