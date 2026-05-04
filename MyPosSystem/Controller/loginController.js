@@ -32,4 +32,21 @@ $(document).ready(function () {
         }
     });
 
+    $('#logout-btn').click(function(e) {
+        e.preventDefault();
+        Swal.fire({
+            title: 'Logout',
+            text: "Are you sure you want to log out?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, log out!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.reload();
+            }
+        });
+    });
+
 });
