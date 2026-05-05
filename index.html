@@ -230,15 +230,155 @@
             padding-right: 20px;
         }
 
-        @media all and (max-width: 1000px) {
+        #sidebar-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 999;
+            backdrop-filter: blur(2px);
+        }
+        #sidebar-overlay.active { display: block; }
 
-            .row {
-                gap: 10px;
+        #hamburger-btn {
+            display: none;
+            position: fixed;
+            top: 14px;
+            left: 14px;
+            z-index: 1100;
+            background: #7A00CC;
+            border: none;
+            border-radius: 10px;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(122, 0, 204, 0.35);
+            transition: background 0.2s;
+        }
+        #hamburger-btn:hover { background: #9500E5; }
+        #hamburger-btn span,
+        #hamburger-btn span::before,
+        #hamburger-btn span::after {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: white;
+            border-radius: 2px;
+            position: relative;
+            transition: all 0.3s;
+        }
+        #hamburger-btn span::before,
+        #hamburger-btn span::after {
+            content: '';
+            position: absolute;
+        }
+        #hamburger-btn span::before { top: -7px; }
+        #hamburger-btn span::after  { top:  7px; }
+
+        #hamburger-btn.open span          { background: transparent; }
+        #hamburger-btn.open span::before  { transform: rotate(45deg);  top: 0; }
+        #hamburger-btn.open span::after   { transform: rotate(-45deg); top: 0; }
+
+        @media (max-width: 991px) {
+
+            #hamburger-btn { display: flex; }
+
+            #sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: none;
+                z-index: 1050;
+            }
+            #sidebar.sidebar-open {
+                transform: translateX(0);
+                box-shadow: 6px 0 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .spa-section {
+                margin-left: 0 !important;
+                width: 100% !important;
+                padding: 70px 16px 30px !important;
+            }
+
+            #dashboard-section {
+                margin-left: 0 !important;
+                margin-top: 0 !important;
+                padding-right: 16px !important;
+                padding-top: 70px !important;
+            }
+
+            #login-container.expanded {
+                width: calc(100vw - 40px) !important;
+                max-width: 500px;
+                height: auto !important;
+                min-height: 420px;
+            }
+
+            #main-content-border {
+                flex-direction: column !important;
+            }
+            #login-img {
+                height: 160px;
+                border-radius: 18px 18px 0 0 !important;
+                margin: 4px 4px 0 !important;
+            }
+            #form-content {
+                padding: 24px !important;
+            }
+
+            .row.g-4 > .col-md-3 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            #order-section .col-lg-8,
+            #order-section .col-lg-4 {
+                flex: 0 0 100%;
+                max-width: 100%;
             }
         }
 
+        @media (max-width: 575px) {
+
+            .row.g-4 > .col-md-3 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
 
 
+            #login-container.expanded {
+                width: calc(100vw - 20px) !important;
+                border-radius: 18px !important;
+            }
+
+            .col-md-4, .col-md-6 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .col-12[style*="text-align: right"] {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                justify-content: flex-end;
+            }
+        }
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+
+            .spa-section {
+                margin-left: 260px;
+                padding: 30px 20px !important;
+                width: calc(100% - 260px) !important;
+            }
+
+            #dashboard-section {
+                margin-left: 280px !important;
+                padding-right: 20px !important;
+            }
+        }
 
 
 
@@ -246,6 +386,8 @@
 </head>
 
 <body>
+
+
 <main>
 
     <!--///////////////////////////Login///////////////////////////////////////-->
@@ -311,6 +453,7 @@
             </ul>
         </aside>
 
+        <!-- Dashboard Section -->
         <section id="dashboard-section" class="spa-section" style="display: block;">
             <div class="container-fluid p-4">
 
