@@ -1,3 +1,4 @@
+// login button eka login contener eka wenawa
 function expandBox() {
     const container = document.getElementById('login-container');
     const wrapper = document.getElementById('main-content-border');
@@ -11,6 +12,7 @@ function expandBox() {
     }
 }
 
+// login wenna password harinam naththen error msg
 $(document).ready(function () {
     $('#login-btn').click(function (e) {
         e.preventDefault();

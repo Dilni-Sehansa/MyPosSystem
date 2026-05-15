@@ -4,17 +4,18 @@ import { getOrderData } from '../model/OrderModel.js';
 
 const updateDashboard = () => {
 
-    let today = new Date();
+    //date
+    let today = new Date(); //Fri May 15 2026 11:17:49 GMT+0530 (India Standard Time)
     let formattedDate = today.toLocaleDateString('en-GB', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric'
+        year: 'numeric', //2025
+        month: 'short', //Jan
+        day: 'numeric' //1
     });
     $('.fa-calendar-days').parent().html(`
         <i class="fa-regular fa-calendar-days me-2"></i> ${formattedDate}
     `);
-
     let todayString = today.toISOString().split('T')[0];
+
 
     // ---------- Customers ----------
     let customerCount = getCustomerData().length;
@@ -35,7 +36,7 @@ const updateDashboard = () => {
     $('#dash-revenue').text(`Rs. ${todayRevenue.toLocaleString()}`);
 
     // ---------- Recent Orders ----------
-    let recentOrders = [...allOrders].reverse().slice(0, 5); // Get last 5 orders
+    let recentOrders = [...allOrders].reverse().slice(0, 5);
     let recentOrdersList = $('#dash-recent-orders-list');
     recentOrdersList.empty();
 
@@ -66,7 +67,6 @@ const updateDashboard = () => {
 $(document).ready(function () {
     updateDashboard();
 
-    // SPA Navigation Refresh
     $(".nav-btn[data-target='dashboard-section']").click(function() {
         updateDashboard();
     });

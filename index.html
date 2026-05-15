@@ -309,7 +309,7 @@
                 margin-left: 0 !important;
                 margin-top: 0 !important;
                 padding-right: 16px !important;
-                padding-top: 70px !important;
+                padding-top: 50px !important;
             }
 
             #login-container.expanded {
@@ -449,22 +449,25 @@
                 <li class="nav-item m-1"><a class="nav-link nav-btn" data-target="order-section" style="color: rgba(255,255,255,0.7); padding: 10px 15px;">Order</a></li>
                 <li class="nav-item m-1"><a class="nav-link nav-btn" data-target="order-details-section" style="color: rgba(255,255,255,0.7); padding: 10px 15px;">Order Details</a></li>
                 <li class="nav-item m-1"><a class="nav-link" id="logout-btn" style="color: rgba(255,255,255,0.7); background-color: red;padding: 10px 15px; border-radius: 10px; margin-top: 50px; cursor: pointer;"><i class="fa-solid fa-arrow-right-from-bracket" style="color: rgb(255, 255, 255);"></i> LogOut</a></li>
-
             </ul>
         </aside>
 
         <!-- Dashboard Section -->
         <section id="dashboard-section" class="spa-section" style="display: block;">
+
             <div class="container-fluid p-4">
 
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h2 class="fw-bold" style="color: #7A00CC;">Dashboard</h2>
-                    <span class="badge rounded-pill px-3 py-2" style="background: #F0E6FF; color: #7A00CC; border: 1px solid #D1C4E9;">
+                    <h2 class="fw-bold" style="color: #7A00CC;">Dashboard</h2> <!--topic-->
+                    <span class="badge rounded-pill px-3 py-2" style="background: #F0E6FF; color: #7A00CC; border: 1px solid #D1C4E9;">  <!--date-->
                 <i class="fa-regular fa-calendar-days me-2"></i>
-            </span>
+                    </span>
                 </div>
 
+                <!--Top-->
                 <div class="row g-4 mb-4">
+
+                    <!--Customer-->
                     <div class="col-md-3">
                         <div class="card border-0 shadow-sm p-3" style="border-radius: 20px; background: linear-gradient(145deg, #ffffff, #f8f4ff);">
                             <div class="d-flex justify-content-between align-items-start">
@@ -480,7 +483,7 @@
                         </div>
                     </div>
 
-
+                    <!--Item-->
                     <div class="col-md-3">
                         <div class="card border-0 shadow-sm p-3" style="border-radius: 20px;">
                             <div class="d-flex justify-content-between align-items-start">
@@ -496,6 +499,7 @@
                         </div>
                     </div>
 
+                    <!--Profit-->
                     <div class="col-md-3">
                         <div class="card border-0 shadow-sm p-3" style="border-radius: 20px;">
                             <div class="d-flex justify-content-between align-items-start">
@@ -511,6 +515,7 @@
                         </div>
                     </div>
 
+                    <!--Order-->
                     <div class="col-md-3">
                         <div class="card border-0 shadow-sm p-3" style="border-radius: 20px;">
                             <div class="d-flex justify-content-between align-items-start">
@@ -527,8 +532,10 @@
                     </div>
                 </div>
 
+                <!--Bottom-->
                 <div class="row g-4">
 
+                    <!--Graph-->
                     <div class="col-md-7">
                         <div class="card border-0 shadow-sm p-4" style="border-radius: 25px;">
                             <div class="d-flex justify-content-between mb-4">
@@ -551,11 +558,11 @@
                         </div>
                     </div>
 
+                    <!--OrderFill-->
                     <div class="col-md-5">
                         <div class="card border-0 shadow-sm p-4" style="border-radius: 25px;">
                             <div class="d-flex justify-content-between mb-3">
                                 <h5 class="fw-bold" style="color: #7A00CC;">Recent Orders</h5>
-                                <a href="#" class="text-decoration-none small" style="color: #7A00CC;">View All</a>
                             </div>
                             <div class="list-group list-group-flush" id="dash-recent-orders-list">
 
@@ -715,6 +722,8 @@
         <section id="order-section" class="spa-section">
             <div class="row">
                 <div class="col-lg-8">
+
+                    <!--TextField-->
                     <div style="background: white; padding: 30px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px;">
                         <h2 style="color: #7A00CC; font-weight: 600; margin-bottom: 25px;">Place Order</h2>
                         <form class="row g-3 mb-4">
@@ -750,6 +759,8 @@
                             </div>
                         </form>
                     </div>
+
+                    <!--Cart and table-->
                     <div style="background: white; padding: 30px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h2 style="color: #7A00CC; font-weight: 600;">Cart</h2>
@@ -767,6 +778,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!--Purchase Order-->
                 <div class="col-lg-4">
                     <div style="background: #7A00CC; padding: 30px; border-radius: 30px; color: white; box-shadow: 0 10px 25px rgba(122, 0, 204, 0.3);">
                         <h3 style="font-weight: 600; margin-bottom: 30px;">Order Summary</h3>
