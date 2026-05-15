@@ -32,8 +32,8 @@ const loadItemTbl = () => {
 const cleanItemForm = () => {
     $('#item_id_input').val(generateItemId()).attr('readonly', true);
     $('#item_name_input').val("");
-    $('#item_category_input').val("Shirt");
-    $('#item_size_input').val("S");
+    $('#item_category_input').val("");
+    $('#item_size_input').val("");
     $('#item_qty_input').val("");
     $('#item_receivedPrice_input').val("");
     $('#item_price_input').val("");
@@ -61,27 +61,6 @@ $('#item_file_input').on('change', function (e) {
         };
 
         reader.readAsDataURL(file);
-    }
-});
-
-$('#itemTbl').on('click', '.edit-btn', function () {
-    let index = $(this).data('index');
-    let item = getItemDataByIndex(index);
-
-    if (item) {
-        $('#item_id_input').val(item.id).attr('readonly', true);
-        $('#item_name_input').val(item.name);
-        $('#item_category_input').val(item.category);
-        $('#item_size_input').val(item.size);
-        $('#item_qty_input').val(item.qty);
-        $('#item_receivedPrice_input').val(item.receivedPrice);
-        $('#item_price_input').val(item.price);
-
-        selected_image = item.image;
-
-        $('#image-preview-container').html(`
-            <img src="${selected_image}" style="width:100%; height:100%; object-fit:cover;">
-        `);
     }
 });
 
@@ -151,6 +130,27 @@ $('#item-update-btn').on('click', function (e) {
 
     loadItemTbl();
     cleanItemForm();
+});
+
+$('#itemTbl').on('click', '.edit-btn', function () {
+    let index = $(this).data('index');
+    let item = getItemDataByIndex(index);
+
+    if (item) {
+        $('#item_id_input').val(item.id).attr('readonly', true);
+        $('#item_name_input').val(item.name);
+        $('#item_category_input').val(item.category);
+        $('#item_size_input').val(item.size);
+        $('#item_qty_input').val(item.qty);
+        $('#item_receivedPrice_input').val(item.receivedPrice);
+        $('#item_price_input').val(item.price);
+
+        selected_image = item.image;
+
+        $('#image-preview-container').html(`
+            <img src="${selected_image}" style="width:100%; height:100%; object-fit:cover;">
+        `);
+    }
 });
 
 $('#itemTbl').on('click', '.delete-btn', function () {
