@@ -2,11 +2,8 @@ import { getCustomerData } from '../model/CustomerModel.js';
 import { getItemData } from '../model/ItemModel.js';
 import { getOrderData } from '../model/OrderModel.js';
 
-// ============================
-// DASHBOARD UPDATE FUNCTION
-// ============================
 const updateDashboard = () => {
-    // ---------- Date (top badge) ----------
+
     let today = new Date();
     let formattedDate = today.toLocaleDateString('en-GB', {
         year: 'numeric',
@@ -37,7 +34,7 @@ const updateDashboard = () => {
     let todayRevenue = todayOrders.reduce((sum, order) => sum + order.total, 0);
     $('#dash-revenue').text(`Rs. ${todayRevenue.toLocaleString()}`);
 
-    // ---------- Recent Orders (Last 5) ----------
+    // ---------- Recent Orders ----------
     let recentOrders = [...allOrders].reverse().slice(0, 5); // Get last 5 orders
     let recentOrdersList = $('#dash-recent-orders-list');
     recentOrdersList.empty();
@@ -66,9 +63,6 @@ const updateDashboard = () => {
     }
 };
 
-// ============================
-// INITIAL LOAD (page open)
-// ============================
 $(document).ready(function () {
     updateDashboard();
 
@@ -78,9 +72,6 @@ $(document).ready(function () {
     });
 });
 
-// ============================
-// EXPORT (use from other controllers)
-// ============================
 export const refreshDashboard = () => {
     updateDashboard();
 };
